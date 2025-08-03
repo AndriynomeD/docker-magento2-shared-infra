@@ -13,11 +13,11 @@ nginx-proxy & shared infrastructure
 ### What included
 
 1. [nginx-proxy/nginx-proxy][nginx-proxy-repo] sets up a container running nginx and [docker-gen][1]. docker-gen generates reverse proxy configs for nginx and reloads nginx when containers are started and stopped. See [Automated Nginx Reverse Proxy for Docker][2] for why you might want to use this.
-2. [aegypius/mkcert-for-nginx-proxy][mkcert-repo] is a lightweight companion container for the [nginx-proxy/nginx-proxy][nginx-proxy-repo]. It's heavily inspired by [nginx-proxy/acme-companion][3] and it allows the creation/renewal of self-signed certificate with a root certificate authority.
+2. [aegypius/mkcert-for-nginx-proxy][mkcert-repo] is a lightweight companion container for the [nginx-proxy/nginx-proxy][nginx-proxy-repo]. It's heavily inspired by [nginx-proxy/acme-companion][acme-companion] and it allows the creation/renewal of self-signed certificate with a root certificate authority.
 3. phpMyAdmin - databases manager
 4. Mailpit as shared service for email testing for developers.
-5. ElasticSearch - for shared access from multiple magento instances (need use different "Elasticsearch Index Prefix" in each instance)
-6. OpenSearch - for shared access from multiple magento instances (need use different "Opensearch Index Prefix" in each instance)
+5. ElasticSearch - for shared access from multiple magento instances (need to use different "Elasticsearch Index Prefix" in each instance)
+6. OpenSearch - for shared access from multiple magento instances (need to use different "Opensearch Index Prefix" in each instance)
 7. Kibana for ElasticSearch. Disabled by default
 8. OpenSearch Dashboards for OpenSearch. Disabled by default
 
@@ -112,8 +112,7 @@ If your container only exposes one port and it has a VIRTUAL_HOST env var set, t
 
 [1]: https://github.com/nginx-proxy/docker-gen
 [2]: http://jasonwilder.com/blog/2014/03/25/automated-nginx-reverse-proxy-for-docker/
-[3]: https://github.com/nginx-proxy/acme-companion
+[acme-companion]: https://github.com/nginx-proxy/acme-companion
 [nginx-proxy-repo]: https://github.com/nginx-proxy/nginx-proxy
 [mkcert-repo]: https://github.com/aegypius/mkcert-for-nginx-proxy
-[nginx-proxy]: https://github.com/AndriynomeD/nginx-proxy
 [docker-magento2]: https://github.com/AndriynomeD/docker-magento2
